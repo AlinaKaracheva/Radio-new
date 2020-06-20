@@ -11,6 +11,11 @@ public class Radio {
     private int currentVolume;
     private boolean on;
 
+
+    public Radio(int maxStation) {
+        this.maxStation = maxStation;
+    }
+
     public String getName() {
         return name;
     }
@@ -52,16 +57,16 @@ public class Radio {
     public void setNextStation() {
         if (currentStation >= maxStation) {
             this.currentStation = minStation;
+            return;
         }
-        else
             this.currentStation++;
     }
 
     public void setPrevStation() {
         if (currentStation <= minStation) {
             this.currentStation = maxStation;
+            return;
         }
-        else
             this.currentStation--;
     }
 

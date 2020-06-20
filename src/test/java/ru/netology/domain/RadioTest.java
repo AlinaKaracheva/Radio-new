@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
-    Radio radio = new Radio();
+    Radio radio = new Radio(10);
 
     @Test
     public void shouldSetDefaultNumberOfStations() {
-        int expected = 10;
+        radio.setMaxStation(10);
         assertEquals(10, radio.getMaxStation());
     }
 
@@ -124,7 +124,7 @@ class RadioTest {
 
     @Test
     public void shouldNotDecreaseVolumeUnderMin() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setMaxVolume(100);
         radio.setMinVolume(0);
         radio.setCurrentVolume(0);
